@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Button } from '@/components/ui/Button'
 import { Card, CardContent, CardHeader } from '@/components/ui/Card'
@@ -8,7 +8,7 @@ import { useQuizBuilderStore } from '@/store/quizBuilderStore'
 import { useAuthStore } from '@/store/authStore'
 import { api } from '@/lib/api'
 
-export default function ReviewPage() {
+function ReviewContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { title, description, questions, theme, reset } = useQuizBuilderStore()
@@ -233,5 +233,13 @@ export default function ReviewPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function ReviewPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">جاري التحميل...</div>}>
+      <ReviewContent />
+    </Suspense>
   )
 }
