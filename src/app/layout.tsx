@@ -17,6 +17,11 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1874360923595437"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className="font-sans antialiased">
         <AuthProvider>
