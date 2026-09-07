@@ -6,6 +6,31 @@ import AuthProvider from "@/components/providers/AuthProvider";
 export const metadata: Metadata = {
   title: "اعرفني - E3rafni",
   description: "منصة لإنشاء الاختبارات الشخصية",
+  metadataBase: new URL('https://e3rafni.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  openGraph: {
+    title: "اعرفني - E3rafni",
+    description: "منصة لإنشاء الاختبارات الشخصية",
+    url: 'https://e3rafni.vercel.app',
+    siteName: 'اعرفني',
+    locale: 'ar_AR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'اعرفني - E3rafni',
+    description: 'منصة لإنشاء الاختبارات الشخصية',
+  },
 };
 
 export default function RootLayout({
