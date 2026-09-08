@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import AuthProvider from "@/components/providers/AuthProvider";
 
 export const metadata: Metadata = {
@@ -48,10 +49,13 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased flex flex-col min-h-screen">
         <AuthProvider>
           <Navbar />
-          {children}
+          <div className="flex-grow">
+            {children}
+          </div>
+          <Footer />
         </AuthProvider>
       </body>
     </html>
